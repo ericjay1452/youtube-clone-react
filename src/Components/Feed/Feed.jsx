@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Stack, Box, Typography} from "@mui/material"
-import SideBar from './SideBar'
+import {SideBar, Videos } from '../../Components'
 
 
 const Feed = () => {

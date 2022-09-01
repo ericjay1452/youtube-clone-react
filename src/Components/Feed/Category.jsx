@@ -10,7 +10,7 @@ const Category = (props) => {
         style={{color : "white", background : name === selectedCategory && "#FC3150"}}
         >
             <span style={{color : name === selectedCategory ? "white"  : "orange", marginRight : "15px"}}>{icon}</span>
-            <span>{name}</span>
+            <span style={{opacity : name === selectedCategory ? "1" : "0.8"}}>{name}</span>
         </button>
     </>
   )
