@@ -5,10 +5,15 @@ function App() {
   return (
     <BrowserRouter>
       <Box sx= {{backgroundColor : "#000"}}>
-        NavBar
-        <Routes>
+        <NavBar />
 
+        <Routes>
+         <Route path="/" exact element = {<Feed />}/>
+         <Route path="/video/:id"  element = {<VideoDetail />}/>
+         <Route path="/channel/:id" exact element = {<ChannelDetail />}/>
+         <Route path="/search/:searchterm"  element = {<SearchTerm />}/>
         </Routes>
+        
       </Box>
     </BrowserRouter>
   );
