@@ -11,8 +11,9 @@ const Feed = () => {
   // 2. for Videos Content
 
   const[selectedCategory, setSelectedCategory] =  useState("New")
+  const [videos, setVideos] = useState([])
   useEffect ( ()=>{
-   YoutubeApi(`search?part=snippet&q=${selectedCategory}`)
+   YoutubeApi(`search?part=snippet&q=${selectedCategory}`).then( (data) => setVideos(data.items))
   }, [selectedCategory])
   return (
     <Stack
@@ -42,6 +43,8 @@ const Feed = () => {
         <Typography color={"white"} mb = {2} variant = {'h4'} fontWeight = "bold">
         {selectedCategory } - <span style={{color : "orange"}}>Video</span>
         </Typography>
+        
+        <Videos videos = {videos} />
      </Box>
 
     </Stack>
