@@ -1,7 +1,16 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {Box} from "@mui/material"
 
 function App() {
   return (
-    <h2>App</h2>
+    <BrowserRouter>
+      <Box sx= {{backgroundColor : "#000"}}>
+        NavBar
+        <Routes>
+
+        </Routes>
+      </Box>
+    </BrowserRouter>
   );
 }
 
