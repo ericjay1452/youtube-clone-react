@@ -2,7 +2,6 @@ import axios from "axios";
 
 const Root_Uri = 'https://youtube-v31.p.rapidapi.com/search'
 const options = {
-    url: Root_Uri,
     params: {
       maxResults: '50'
     },
@@ -11,3 +10,8 @@ const options = {
       'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
     }
   };
+
+  export const YoutubeApi = async (url)=> {
+    const {data} = await axios.get(`${Root_Uri}/${url}`,options);
+    return data;
+  }

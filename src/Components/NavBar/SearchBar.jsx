@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import {Paper, IconButton} from "@mui/material"
 
 export class SearchBar extends Component {
-      constructor(props) {
-        super(props);
-      }
+      // constructor(props) {
+      //   super(props);
+      // }
 
   render() {
     return (
