@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Stack, Box, Typography} from "@mui/material"
-import {SideBar, Videos } from '../../Components'
+import {SideBar, Videos} from '../../Components'
 
 import {YoutubeApi} from "../../Utils/YoutubeApi"
 
@@ -43,7 +43,7 @@ const Feed = () => {
         <Typography color={"white"} mb = {2} variant = {'h4'} fontWeight = "bold">
         {selectedCategory } - <span style={{color : "orange"}}>Video</span>
         </Typography>
-        
+
         <Videos videos = {videos} />
      </Box>
 
