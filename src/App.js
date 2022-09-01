@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import {Box} from "@mui/material"
+import {NavBar, VideoDetail, ChannelDetail,SearchTerm, Error, Feed} from "./Components"
 
 function App() {
   return (
