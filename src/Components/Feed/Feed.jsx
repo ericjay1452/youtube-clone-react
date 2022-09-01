@@ -2,12 +2,18 @@ import React, {useState, useEffect} from 'react'
 import {Stack, Box, Typography} from "@mui/material"
 import {SideBar, Videos } from '../../Components'
 
+import {YoutubeApi} from "../../Utils/YoutubeApi"
+
 
 const Feed = () => {
   // created a two dimensional layout 
   // 1.for SideBar
   // 2. for Videos Content
 
+  const[selectedCategory, setSelectedCategory] =  useState("New")
+  useEffect ( ()=>{
+   YoutubeApi(`search?part=snippet&q=${selectedCategory}`)
+  }, [selectedCategory])
   return (
     <Stack
     // For creating responsiveness on devices sm, md e.t.c (i.e code in sx)
@@ -21,7 +27,7 @@ const Feed = () => {
           px : {sx : 0, md : 2}}}
      >
 
-     <SideBar />
+     <SideBar selectedCategory = {selectedCategory} setSelectedCategory = {setSelectedCategory}/>
 
      <Typography className = "copyright"
      variant = "body1"
@@ -34,7 +40,7 @@ const Feed = () => {
      {/* For  Videos Content*/}
      <Box p= {2} sx = {{overflowY : "auto", height : "90vh", flex : 2}}>
         <Typography color={"white"} mb = {2} variant = {'h4'} fontWeight = "bold">
-        New <span style={{color : "orange"}}>Video</span>
+        {selectedCategory } - <span style={{color : "orange"}}>Video</span>
         </Typography>
      </Box>
 

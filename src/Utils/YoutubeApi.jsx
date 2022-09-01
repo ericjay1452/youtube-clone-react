@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Root_Uri = 'https://youtube-v31.p.rapidapi.com/search'
+const Root_Uri = 'https://youtube-v31.p.rapidapi.com/'
 const options = {
     params: {
       maxResults: '50'

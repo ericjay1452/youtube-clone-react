@@ -1,14 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Stack } from '@mui/material'
 import {categories} from "../../Utils/Constant"
 import Category from './Category';
 
-export class SideBar extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
-  render() {
+const SideBar =(props) =>  {
+  const {selectedCategory, setSelectedCategory} = props
     return (
       <Stack
       direction={"row"}
@@ -22,12 +18,15 @@ export class SideBar extends Component {
       >
        {
         categories.map( (category) => (
-            <Category category = {category} key = {category.name}/>
+            <Category category = {category} key = {category.name} 
+            selectedCategory = {props.selectedCategory}
+            setSelectedCategory = {props.setSelectedCategory}
+            />
         ))
        }
       </Stack>
     )
   }
-}
+
 
 export default SideBar
