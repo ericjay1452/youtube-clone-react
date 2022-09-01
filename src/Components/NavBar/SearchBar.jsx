@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {SearchIcon} from "@mui/icons-material"
+import {Search} from "@mui/icons-material"
 import { useNavigate } from 'react-router-dom'
 import {Paper, IconButton} from "@mui/material"
 
@@ -12,7 +12,7 @@ export class SearchBar extends Component {
     return (
       <Paper
       component={"form"}
-      onChange = {()=>}
+      onSubmit = {""}
       sx = {{
         borderRadius : 20,
         border : "1px solid #e3e3e3", 
@@ -21,7 +21,15 @@ export class SearchBar extends Component {
         mr : {sm : 5} 
       }} 
       >
-       <input className='search-bar'/>
+       <input className='search-bar'
+       value={""}
+       onChange = {""}
+       placeholder = {"Search ...."}
+       />
+
+       <IconButton sx={{p: "5px", color : "red",}} type = "submit">
+        <Search />
+       </IconButton>
       </Paper>
     )
   }
