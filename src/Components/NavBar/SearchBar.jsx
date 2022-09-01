@@ -10,8 +10,18 @@ export class SearchBar extends Component {
 
   render() {
     return (
-      <Paper>
-
+      <Paper
+      component={"form"}
+      onChange = {()=>}
+      sx = {{
+        borderRadius : 20,
+        border : "1px solid #e3e3e3", 
+        pl : 2, 
+        boxShadow : "none",
+        mr : {sm : 5} 
+      }} 
+      >
+       <input className='search-bar'/>
       </Paper>
     )
   }
