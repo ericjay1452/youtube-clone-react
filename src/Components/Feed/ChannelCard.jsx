@@ -20,8 +20,16 @@ const ChannelCard = ({channelDetail}) => {
         <CardMedia 
         image = {channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
         alt = {channelDetail?.snippet?.title}
-        sx = {{borderRadius : "50%", width : "180px", height : "180px", mb : 2, border: "1px solid #e3e3e3"}}
+        sx = {{borderRadius : "50%", 
+        width : "180px", height : "180px", 
+        mb : 2, 
+        border: "1px solid #e3e3e3"}}
         />
+
+        <Typography variant = "h6" fontFamily={"Lexend"}>
+          {channelDetail?.snippet?.title}
+          <CheckCircle sx = {{color : "orange", fontSize : 15, ml:"5px",}}/>
+        </Typography>
       </CardContent>
        </Link>
     </Box>
