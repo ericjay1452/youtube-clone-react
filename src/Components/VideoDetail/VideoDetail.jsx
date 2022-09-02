@@ -16,6 +16,9 @@ const VideoDetail = () => {
    YoutubeApi(`videos?part=snippet,statistics&id=${id}`).then((data) =>setVideoDetail(data?.items[0]))
    },[id])
 
+   if(!videoDetail?.snippet) return "Loading"
+
+   const {snippet : {title, channelId, channelTitle,}, statistics : {viewCount,likeCount}} = videoDetail
   return (
     <Box minHeight={"95vh"}>
       <Stack direction={{xs : "column", md: "row"}}>
@@ -25,12 +28,22 @@ const VideoDetail = () => {
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`}
             className = "react-player" controls
             />
-            <Typography>
-              {videoDetail?.snippet?.title}
+            <Typography color= {"orange"} variant= {"h5"} fontWeight = {"bold"} p = {2}>
+              {title}
             </Typography>
-            <Stack direction = "row" justifyContent={"space-between"} sx= {{color : "white"}}>
 
+            <Stack direction = "row" px = {2} py = {1}justifyContent={"space-between"} sx= {{color : "white"}}>
+              <Link to= {`/channel/${channelId}`}>
+              <Typography variant={{sm:"subtitle1", md : "h6"}} color= {"orange"}>
+                {channelTitle}
+                <CheckCircle sx= {{color : "orange", ml : "5px", fontSize : "15px"}}/>
+              </Typography>
+              </Link>
+
+              <Stack></Stack>
+              
             </Stack>
+
           </Box>
 
         </Box>
