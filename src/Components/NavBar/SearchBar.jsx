@@ -6,10 +6,21 @@ import { useState } from 'react'
 
 const SearchBar = () =>{
   const [searchTerm, setSearchTerm] = useState( "")
+  const navigate = useNavigate();
+
+  const HandleSubmit = (e) =>{
+    e.preventDefault();
+
+    if(searchTerm) {
+      return navigate(`/search/${searchTerm}`)
+      setSearchTerm("")
+    }
+     return
+  }
     return (
       <Paper
       component={"form"}
-      onSubmit = {""}
+      onSubmit = {HandleSubmit}
       sx = {{
         borderRadius : 20,
         border : "1px solid #e3e3e3", 
