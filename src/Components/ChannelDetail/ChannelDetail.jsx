@@ -23,17 +23,20 @@ const ChannelDetail = () => {
       <Box>
       <div style={{
         // backgroundImage : `url(${channelDetail?.brandingSettings?.channel?.image?.bannerExternalUrl})`, 
-      height  : "300px",zIndex : "10",
+      height  : "300px",zIndex : "1",
       background: "red",
-     color : "white",
-     position : "relative"}} />
+     color : "white"}} />
       {/* <ChannelCard channelDetail = {channelDetail} /> */}
+      <ChannelCard channelDetail = {channelDetail} marginTop = "-4rem"/>
       </Box>
-       {/* <div style = {{position : "absolute", margin: "auto",right: "50%",top: "20rem",zIndex: "20", left: "50%",background:"white", display: "block", width : "auto"}}> */}
-        <ChannelCard channelDetail = {channelDetail} />
-        {/* </div> */}
+       
+        <Box display={"flex"} p = {2}>
+          <Box sx = {{mr: {sm : "100px"}}} />
+          <Videos videos = {videos} />
+        </Box>
+        
     </Box>
-    </>
+    </> 
   )
 }
 
