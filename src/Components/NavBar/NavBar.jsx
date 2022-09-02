@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import { Stack } from '@mui/material'
-import Logo from "../../Utils/Logo/Youtube-Logo.svg"
+import Logo from "../../Utils/Logo/Youtube.svg"
 import SearchBar from "./SearchBar"
 
 const NavBar = () => {

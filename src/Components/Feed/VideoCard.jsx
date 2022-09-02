@@ -6,9 +6,7 @@ import{demoThumbnailUrl,demoChannelUrl,
     demoVideoUrl,demoChannelTitle,demoVideoTitle} from "../../Utils/Constant"
     
 const VideoCard = ({video}) => {
-   console.log(video)
     const {id : {videoId}, snippet} = video;
-    console.log(videoId, snippet)
   return (
 
     <Card sx = {{width : {sx : "100%", md : "320px"},
