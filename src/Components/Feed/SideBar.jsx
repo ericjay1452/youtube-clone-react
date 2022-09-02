@@ -19,8 +19,8 @@ const SideBar =(props) =>  {
        {
         categories.map( (category) => (
             <Category category = {category} key = {category.name} 
-            selectedCategory = {props.selectedCategory}
-            setSelectedCategory = {props.setSelectedCategory}
+            selectedCategory = {selectedCategory}
+            setSelectedCategory = {setSelectedCategory}
             />
         ))
        }
