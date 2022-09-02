@@ -8,7 +8,14 @@ import{demoProfilePicture} from "../../Utils/Constant"
 const ChannelCard = ({channelDetail}) => {
   return (
     <Box
-    sx ={{boxShadow : "none", borderRadius : "20px"}}>
+    sx ={{boxShadow : "none",
+     borderRadius : "20px",
+     width : {xs: "356px", md: "320px",
+     display : "flex",
+     justifyContent: "center",
+     alignItems: "center",
+    //  height: "326px",
+     margin : "auto"}}}>
 
        <Link to = {`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent sx = {{display : "flex", 
@@ -30,6 +37,13 @@ const ChannelCard = ({channelDetail}) => {
           {channelDetail?.snippet?.title}
           <CheckCircle sx = {{color : "orange", fontSize : 15, ml:"5px",}}/>
         </Typography>
+        {channelDetail?.statistics?.subscriberCount &&(
+          <Typography>
+            {parseInt(
+              channelDetail?.statistics?.subscriberCount
+            ).toLocaleString()} Subscribers
+          </Typography>
+        )}
       </CardContent>
        </Link>
     </Box>
