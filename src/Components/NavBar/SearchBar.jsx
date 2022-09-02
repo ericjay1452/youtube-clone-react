@@ -3,12 +3,7 @@ import {Search} from "@mui/icons-material"
 import { useNavigate } from 'react-router-dom'
 import {Paper, IconButton} from "@mui/material"
 
-export class SearchBar extends Component {
-      // constructor(props) {
-      //   super(props);
-      // }
-
-  render() {
+const SearchBar = () =>{
     return (
       <Paper
       component={"form"}
@@ -32,7 +27,6 @@ export class SearchBar extends Component {
        </IconButton>
       </Paper>
     )
-  }
 }
 
 export default SearchBar
