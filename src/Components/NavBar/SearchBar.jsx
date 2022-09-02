@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import {Search} from "@mui/icons-material"
 import { useNavigate } from 'react-router-dom'
 import {Paper, IconButton} from "@mui/material"
+import { useState } from 'react'
 
 const SearchBar = () =>{
+  const [searchTerm, setSearchTerm] = useState( "")
     return (
       <Paper
       component={"form"}
@@ -17,8 +19,8 @@ const SearchBar = () =>{
       }} 
       >
        <input className='search-bar'
-       value={""}
-       onChange = {""}
+       value={searchTerm}
+       onChange = {(e) =>setSearchTerm(e.target.value)}
        placeholder = {"Search ...."}
        />
 
