@@ -25,6 +25,12 @@ const VideoDetail = () => {
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`}
             className = "react-player" controls
             />
+            <Typography>
+              {videoDetail?.snippet?.title}
+            </Typography>
+            <Stack direction = "row" justifyContent={"space-between"} sx= {{color : "white"}}>
+
+            </Stack>
           </Box>
 
         </Box>
