@@ -3,6 +3,8 @@ import {Link, useParams} from "react-router-dom"
 import ReactPlayer from "react-player"
 import { Box, Stack, Typography } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
+import { GrFormViewHide } from "react-icons/gr"
+import millify from 'millify'
 
 import {Videos} from "../../Components"
 import { YoutubeApi } from '../../Utils/YoutubeApi'
@@ -10,13 +12,18 @@ import { YoutubeApi } from '../../Utils/YoutubeApi'
 const VideoDetail = () => {
   const {id} = useParams()
   const [videoDetail, setVideoDetail] = useState(null);
+  const [videos, setVideos] = useState(null)
 
   // for fetching a particular video
    useEffect (() =>{
    YoutubeApi(`videos?part=snippet,statistics&id=${id}`).then((data) =>setVideoDetail(data?.items[0]))
+
+   YoutubeApi(`search?part=snippet&relatedToVideoId=${id}&tye=video`)
+   .then((data) =>setVideos(data?.items))
    },[id])
 
-   if(!videoDetail?.snippet) return "Loading"
+   if(!videoDetail?.snippet) return "Loading";
+   if(!videos) return "LOADING";
 
    const {snippet : {title, channelId, channelTitle,}, statistics : {viewCount,likeCount}} = videoDetail
   return (
@@ -40,14 +47,31 @@ const VideoDetail = () => {
               </Typography>
               </Link>
 
-              <Stack></Stack>
-              
+              <Stack direction={"row"} gap = "20px" mr = "20px" color= "orange">
+                <Typography variant='body1' sx= {{}}>
+                  {millify(viewCount) } <GrFormViewHide />
+                </Typography>
+
+                <Typography variant='body1' sx= {{}}>
+                  {millify(likeCount) } Likes
+                </Typography>
+              </Stack>
+
             </Stack>
 
           </Box>
 
         </Box>
+
+  {/* Right hand videos */}
+        {console.log(videos)}
+      <Box px= {2} py = {{md:1, xs: 5}} justifyContent = "center" alignItems = "center">
+       <Videos videos={videos} direction = "column"/>
+      </Box>
+
       </Stack>
+   
+    
     </Box>
   )
 }

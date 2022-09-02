@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Search} from "@mui/icons-material"
 import { useNavigate } from 'react-router-dom'
 import {Paper, IconButton} from "@mui/material"
@@ -12,10 +12,11 @@ const SearchBar = () =>{
     e.preventDefault();
 
     if(searchTerm) {
-      return navigate(`/search/${searchTerm}`)
+       navigate(`/search/${searchTerm}`)
       setSearchTerm("")
+      return
     }
-     return
+     
   }
     return (
       <Paper

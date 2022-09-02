@@ -2,10 +2,10 @@ import React from 'react'
 import { Stack, Box } from '@mui/material'
 import {VideoCard, ChannelCard} from "../../Components"
 
-const Videos = ({videos}) => {
+const Videos = ({videos,direction}) => {
   return (
     <Stack
-    direction={"row"}
+    direction={direction ||"row"}
     justifyContent = {"start"}
     flexWrap = {"wrap"}
     gap = {2}

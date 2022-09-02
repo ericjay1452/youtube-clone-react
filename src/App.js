@@ -13,7 +13,7 @@ function App() {
          <Route path="/video/:id"  element = {<VideoDetail />}/>
          <Route path="/channel/:id" element = {<ChannelDetail />}/>
          <Route path="/search/:searchTerm" element = {<SearchTerm />}/>
-         {/* <Route path="*"  element = {<Error />}/> */}
+         <Route path="*"  element = {<Error />}/>
         </Routes>
 
       </Box>
